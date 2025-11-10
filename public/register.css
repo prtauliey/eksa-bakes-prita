@@ -1,0 +1,177 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Layout utama */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Bagian kiri - gambar produk */
+.image-side {
+    flex: 1;
+    background-image: url("register.png"); /* Ganti dengan path lokal file kamu */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Snackbar (Gmail-style) */
+.snackbar {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #323232;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 260px;
+    max-width: 420px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s ease;
+    box-shadow: 0 5px 16px rgba(0,0,0,.25);
+    z-index: 9999;
+}
+
+/* Show animation */
+.snackbar.show {
+    opacity: 1;
+    visibility: visible;
+    top: 40px;
+}
+
+.snackbar.success { background: #1e8e3e; }  /* Google green */
+.snackbar.error   { background: #d93025; }  /* Google red */
+
+.snackbar-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.snackbar-close:hover {
+    opacity: 0.7;
+}
+
+/* Bagian kanan - form register */
+.form-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f5f4;
+}
+
+/* Kotak form */
+.form-container {
+    width: 80%;
+    max-width: 360px;
+    text-align: center;
+}
+
+/* Logo dan brand */
+.brand {
+    font-family: "Pacifico", cursive;
+    font-size: 2rem;
+    color: #6f131c;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* Input group */
+.input-group {
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6f131c;
+    font-size: 1.2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #6f131c;
+}
+
+/* Tombol register */
+.btn-register {
+    width: 100%;
+    background-color: #6f131c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #5e1313;
+}
+
+/* Teks bawah */
+.login-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-text a {
+    color: #6f131c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .image-side {
+        height: 40vh;
+    }
+    .form-side {
+        height: 60vh;
+    }
+}
